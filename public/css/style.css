@@ -1,0 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ยืดขนาดเป็น 100% ของความสูงของ viewport */
+  }
+  
+  .container {
+    flex: 1; /* ขยายเต็มพื้นที่ว่างที่เหลือ */
+  }

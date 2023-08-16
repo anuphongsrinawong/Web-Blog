@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <%- include('../partials/nav-bar') %>
+
+    <div class="container">
+        <br>
+        <h1 class="text-center">Blog</h1>
+        <br>
+        <div class="row">
+            <% blog.forEach(blog => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100"> <!-- กำหนดความสูงเท่ากันทุกการ์ด -->
+                        <div class="card-body">
+                            <h5 class="card-title"><%= blog.title %></h5>
+                            <p class="card-text"><%- blog.body.substring(0, 100) %>...</p>
+                            <p class="card-text"><small class="text-muted">Posted on <%= blog.datePosted %></small></p>
+                            <a href="/blog/<%= blog._id %>" class="btn btn-primary">อ่านเพิ่มเติม</a>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    
+    
+
+        <%- include('../partials/footer') %>
+
+</body>
+
+</html>

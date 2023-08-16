@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+    <%- include('../partials/nav-bar') %>
+
+    <div class="container">
+        <% if (message) { %>
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Success</h4>
+                <p><%= message%></p>
+             </div>
+        <%  }%>
+      <br>
+      <h1 class="text-center">ข้อมูลผู้ใช้</h1>
+      <a href="/auth/changepassword" class="btn btn-success">Change Password</a>
+      <hr>
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td><%= user.username %></td>
+                    <td><%= user.role %></td>
+                </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    <%- include('../partials/footer') %>
+    
+
+</body>
+</html>
